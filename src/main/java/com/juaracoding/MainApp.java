@@ -23,6 +23,7 @@ public class MainApp {
         recruit.goToRecruiment();
         recruit.addCandidate();
         recruit.clickVacancy(2);
+        driver.quit();
 
     }
 }

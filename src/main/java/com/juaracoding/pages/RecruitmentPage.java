@@ -2,7 +2,6 @@ package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,7 +23,7 @@ public class RecruitmentPage {
     WebElement RecruitmentPage;
 
     @FindBy(xpath = "//button[normalize-space()='Add']")
-    WebElement addButton;
+    WebElement btnAdd;
     @FindBy(xpath = "//input[@placeholder='First Name']")
     WebElement firstName;
 
@@ -64,7 +63,7 @@ public class RecruitmentPage {
     }
 
     public void addCandidate(){
-        addButton.click();
+        btnAdd.click();
     }
 
     public void setFirstName(String firstName){

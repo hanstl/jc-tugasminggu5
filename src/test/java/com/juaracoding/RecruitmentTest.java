@@ -28,6 +28,7 @@ public class RecruitmentTest {
         DriverSingleton.delay(3);
         DriverSingleton.closeObjectInstance();
     }
+    // 2
 
     @Test(priority = 1)
     public void goToRecruitment(){

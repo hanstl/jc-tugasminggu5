@@ -21,6 +21,7 @@ public class LoginTest {
         String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
         driver.get(url);
         loginPage = new LoginPage();
+        //1
     }
 
     @AfterClass

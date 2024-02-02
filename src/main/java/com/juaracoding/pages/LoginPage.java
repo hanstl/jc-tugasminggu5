@@ -9,8 +9,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.security.Key;
-
 public class LoginPage {
 
     private WebDriver driver;
@@ -23,9 +21,9 @@ public class LoginPage {
 
     // Locator use Page Factory
     @FindBy(xpath = "//input[@placeholder='Username']")
-    WebElement username;
+    WebElement usernameInput;
     @FindBy(xpath = "//input[@placeholder='Password']")
-    WebElement password;
+    WebElement passwordInput;
     @FindBy(xpath = "//button[contains(@class, 'orangehrm-login-button')]")
     WebElement btnLogin;
 
@@ -33,7 +31,7 @@ public class LoginPage {
     WebElement txtDashboard;
 
     @FindBy(xpath = "//div[contains(@class, 'oxd-topbar-header-userarea')]/ul/li/span")
-    WebElement profileBtn;
+    WebElement btnProfile;
 
     @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
     WebElement invalidText;
@@ -42,14 +40,14 @@ public class LoginPage {
     WebElement requiredText;
 
     public void login(String username, String password){
-        this.username.sendKeys(username);
-        this.password.sendKeys(password);
+        this.usernameInput.sendKeys(username);
+        this.passwordInput.sendKeys(password);
         btnLogin.click();
     }
 
     public void clearFormLogin(){
-        this.username.sendKeys(Keys.CONTROL+"A"+Keys.DELETE);
-        this.password.sendKeys(Keys.CONTROL+"A"+Keys.DELETE);
+        this.usernameInput.sendKeys(Keys.CONTROL+"A"+Keys.DELETE);
+        this.passwordInput.sendKeys(Keys.CONTROL+"A"+Keys.DELETE);
     }
 
     public String getTxtDashboard(){
@@ -62,8 +60,8 @@ public class LoginPage {
 
     public void logout(){
         Actions action = new Actions(driver);
-        action.moveToElement(profileBtn).click().perform();
-        profileBtn.findElement(By.xpath("//a[@href='/web/index.php/auth/logout']")).click();
+        action.moveToElement(btnProfile).click().perform();
+        btnProfile.findElement(By.xpath("//a[@href='/web/index.php/auth/logout']")).click();
     }
 
 
